@@ -18,4 +18,19 @@ public class RedisConfig {
     public StringRedisTemplate redisTemplate(RedisConnectionFactory redisConnectionFactory) {
         return new StringRedisTemplate(redisConnectionFactory);
     }
+
 }
+
+//    @Override
+//    public boolean equals(Object obj) {
+//        return super.equals(obj);
+//    }
+//    private static final String REDIS_HOST = "localhost";
+//    private static final int REDIS_PORT = 6379;
+//
+//    public StringRedisTemplate createRedisTemplate() {
+//        StringRedisTemplate redisTemplate = new StringRedisTemplate();
+//        redisTemplate.setConnectionFactory(new LettuceConnectionFactory(REDIS_HOST, REDIS_PORT));
+//        return redisTemplate;
+//    }
+
