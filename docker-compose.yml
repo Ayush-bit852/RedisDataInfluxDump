@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: my_redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  influxdb:
+    image: influxdb:latest
+    container_name: my_influxdb
+    restart: always
+    environment:
+      - INFLUXDB_DB=mydb
+      - INFLUXDB_ADMIN_USER=admin
+      - INFLUXDB_ADMIN_PASSWORD=admin123
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+
+volumes:
+  redis_data:
+  influxdb_data:
